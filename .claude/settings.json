@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import ast,glob; [ast.parse\\(open\\(f,encoding='utf-8'\\).read\\(\\)\\) for f in glob.glob\\('src/*.py'\\)]; print\\('All Python files parse OK.'\\)\")",
+      "PowerShell(Get-Command py, python, python3 -ErrorAction SilentlyContinue)",
+      "Read(//c/Users/khala/AppData/Local/Programs/Python/**)"
+    ]
+  }
+}

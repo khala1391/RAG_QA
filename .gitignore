@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+vectorstore/*
+!vectorstore/.gitkeep
+data/*
+!data/.gitkeep
+.gradio/
+
+docs/*.md

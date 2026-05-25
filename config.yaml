@@ -1,0 +1,35 @@
+embedding:
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  device: cpu
+
+ingestion:
+  chunk_size: 900           # bigger chunks keep tabular rows / list items together
+  chunk_overlap: 120
+  data_dir: data
+
+vectorstore:
+  type: faiss
+  persist_dir: vectorstore
+
+retriever:
+  top_k: 12             # final chunks given to the LLM (bigger = better coverage for list queries)
+  search_type: mmr      # mmr = diverse results across sources; similarity = pure cosine
+  fetch_k: 40           # MMR candidate pool before re-ranking for diversity
+  lambda_mult: 0.5      # 0 = max diversity, 1 = max relevance
+
+llm:
+  provider: groq
+  default_model: llama-3.3-70b-versatile
+  temperature: 0.2
+  max_tokens: 1024
+  available_models:
+    - llama-3.3-70b-versatile
+    - llama-3.1-8b-instant
+    - gemma2-9b-it
+    - mixtral-8x7b-32768
+
+prompt:
+  system: |
+    You are a helpful assistant that answers questions strictly using the provided context.
+    If the answer cannot be found in the context, reply exactly: "I don't know based on the provided documents."
+    Always cite the source filename when possible.

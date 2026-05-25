@@ -1,0 +1,14 @@
+langchain==0.3.7
+langchain-community==0.3.7
+langchain-groq==0.2.1
+langchain-huggingface==0.1.2
+sentence-transformers==3.3.1
+faiss-cpu==1.9.0
+pymupdf==1.24.14
+pytesseract==0.3.13
+Pillow==11.0.0
+python-docx==1.1.2
+unstructured==0.16.8
+pyyaml==6.0.2
+gradio==5.6.0
+python-dotenv==1.0.1
