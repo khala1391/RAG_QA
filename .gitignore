@@ -8,5 +8,6 @@ vectorstore/*
 data/*
 !data/.gitkeep
 .gradio/
+.claude/
 
 docs/*.md
